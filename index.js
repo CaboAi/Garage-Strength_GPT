@@ -1,6 +1,8 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.post("/update_progress_report", (req, res) => {
@@ -37,9 +39,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-const cors = require("cors");
-const express = require("express");
-
-const app = express();
-app.use(cors()); // ✅ Enable CORS
-app.use(express.json());
